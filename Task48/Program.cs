@@ -12,34 +12,37 @@ int ReadInt(string text)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int[,] FillMatrix(int row, int col, int leftRange, int rightRange)
+int [,]FillMatrix(int m, int n)
 {
-    int[,] matrix = new int[row, col];
-    Random rand = new Random();
+    int[,] Massiv = new int[m, n];
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < Massiv.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < Massiv.GetLength(1); j++)
         {
-            matrix[i, j] = i + j;
-            
+            Massiv[i, j] = i + j;
+        }
     }
-
-    return matrix;
+    return Massiv;
 }
 
-void PrintMatrix(int[,] matrix)
+
+
+void PrintMatrix(int[,] Massiv)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < Massiv.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < Massiv.GetLength(1); j++)
         {
-            System.Console.Write(matrix[i, j] + "\t");
+            System.Console.Write(Massiv[i, j] + "\t");
         }
         System.Console.WriteLine();
     }
 }
 
-int[,] matrix = FillMatrix(ReadInt("Введите количество строк: "), ReadInt("Введите количество столбцов: "), 0, 99);
-PrintMatrix(matrix);
+
+
+int[,] Matrix = FillMatrix(ReadInt("Введите количество строк: "), ReadInt("Введите количество столбцов: "));
+
+PrintMatrix(Matrix);
 
