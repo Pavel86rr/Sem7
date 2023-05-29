@@ -22,8 +22,7 @@ int[,] FillMatrix(int row, int col, int leftRange, int rightRange)
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             matrix[i, j] = i + j;
-            //rand.Next(leftRange, rightRange + 1);
-        }
+            
     }
 
     return matrix;
